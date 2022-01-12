@@ -1,0 +1,102 @@
+{% extends "insureApp/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <!-- Home section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'insureApp/img/img-01.jpg' %}"></div>
+        <section id="home" class="tm-section">
+            <h2 class="tm-text-primary">Welcome to AiInsure</h2>
+            <hr class="mb-5">
+            <div class="row">
+                <div class="col-lg-6 tm-col-home mb-4">
+                    <div class="tm-text-container">
+                        <div class="tm-icon-container mb-5 mr-0 ml-auto">
+                            <i class="fas fa-satellite-dish fa-4x tm-text-primary"></i>
+                        </div>
+                        <p>
+                            Welcome to AiInsure
+                        </p>
+                        <p>
+                            Next Generation AI and Blockchain Powered Insurance Solution
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 tm-col-home mb-4">
+                    <div class="tm-text-container">
+                        <div class="tm-icon-container mb-5 mr-0 ml-auto">
+                                        <i class="fas fa-broadcast-tower fa-4x tm-text-primary"></i>
+                                    </div>
+                        <p>
+                            AiInsure builds its core solution with Algorand Blockchain technology -
+                            the future of Finance solution in Insurance industry.
+                        </p>
+                        {% if user.is_authenticated %}
+                            <div class="text-right">
+                                <a href="/userdetails" class="btn btn-primary tm-btn-next">My Details</a>
+                            </div>
+                        {% else %}
+                            <div class="text-right">
+                                <a href="/login" class="btn btn-primary tm-btn-next">Login</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <hr class="tm-hr-short mb-5">
+            <div class="row tm-row-home">
+                <div class="tm-col-home tm-col-home-l">
+                    <div class="media mb-4">
+                        <i class="fas fa-scroll fa-4x tm-post-icon tm-text-primary"></i>
+                        <div class="media-body">
+                            <a href="#" class="d-block mb-2 tm-text-primary tm-post-link">10 December 2021</a>
+                            <p> AiInsure has successfully received security penetration test results from a
+                                professional online security service provider to perform vulnerability testing
+                                and received constructive feedback on areas for improvement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="media mb-4">
+                        <i class="fas fa-cloud-sun fa-4x tm-post-icon tm-text-primary"></i>
+                        <div class="media-body">
+                            <a href="#" class="d-block mb-2 tm-text-primary tm-post-link">10 November 2021</a>
+                            <p>
+                                AiInsure has successfully built and integrated with Algorand Blockchain by
+                                building smart contracts for securely storing high sensitive user profile
+                                data as well as storing insurance claim case reference details on-chain.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="media mb-4">
+                        <i class="fas fa-dove fa-4x tm-post-icon tm-text-primary"></i>
+                        <div class="media-body">
+                            <a href="#" class="d-block mb-2 tm-text-primary tm-post-link">15 October 2021</a>
+                            <p>
+                                RESTful APIs are developed for insurance providers to perform GET claim case enquiries or
+                                GET user profile enquiries, POST claim case batch upload. Details can be referred to
+                                <a href="/apidocs"> <strong>API Documents</strong> </a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-col-home mr-0 ml-auto">
+                    <div class="tm-img-home-container"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+<!--  <h1>AiInsure User Details Page</h1>
+  <h2>Dynamic content</h2>
+    {% if account %}
+    <p>Your AiInsure account has been created. Please write down the following data:</p>
+    <p><strong>Address</strong>: {{ account.0 }}</p>
+    <p><strong>Passphrase</strong>: {{ account.1 }}</p>
+    <br>
+    <a href="/initial-funds/{{ account.0 }}/">Add initial funds</a>
+    {% endif %}
+
+     <ul>
+    <li><strong>UserDetails:</strong> {{ UserDetails.useruuid }} </li>
+    </ul> -->
+{% endblock %}

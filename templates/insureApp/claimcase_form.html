@@ -1,0 +1,21 @@
+{% extends "insureApp/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'insureApp/img/img-01.jpg' %}"></div>
+            <section id="claimcase" class="tm-section">
+                <h2 class="tm-text-primary">Upload a Claim Case</h2>
+                <hr class="mb-5">
+                <form action="" method="POST">
+                {% csrf_token %}
+                    <table>
+                        {{ form|crispy }}
+                    </table>
+                    <div class="text-right">
+                        <input class="btn btn-primary" type="submit" name="creatCase">
+                    </div>
+                </form>
+            </section>
+    </div>
+{% endblock %}

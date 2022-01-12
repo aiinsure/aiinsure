@@ -1,0 +1,37 @@
+{% extends "insureApp/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'insureApp/img/img-01.jpg' %}"></div>
+        <section id="userdetails" class="tm-section">
+            <h2 class="tm-text-primary">My AiInsure User Details</h2>
+            <hr class="mb-5">
+            <p>Username: {{ user.username }}</p>
+            <p>Registered Email: {{ user.email }}</p>
+            <p>First Name: {{ firstname }}</p>
+            <p>Last Name: {{ lastname }}</p>
+            <p>Gender: {{ gender }}</p>
+            <p>Date of Birth: {{ dateofbirth }}</p>
+            <p>Driver License State: {{ driver_licence_state }}</p>
+            <p>Driver License No.: {{ driver_licence_number }}</p>
+            <p>Algorand Address: {{ AlgoAddress }}</p>
+            <p>Algorand Private Key: {{ AlgoPrivateKey }}</p>
+
+            <div class="text-right">
+                <!--<button class="btn btn-primary" type="submit">Update Details</button> -->
+                <a href='/userdetailsupdate/{{ useruuid }}' class="btn btn-primary tm-btn-next">Update Details</a>
+            </div>
+            <!--<hr class="mb-5">
+            <div class="row">
+                <div class="col-lg-6 tm-col-home mb-4">
+                    <div class="tm-text-container">
+                        <div class="tm-icon-container mb-5 mr-0 ml-auto">
+                            <i class="fas fa-satellite-dish fa-4x tm-text-primary"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+        </section>
+    </div>
+{% endblock %}

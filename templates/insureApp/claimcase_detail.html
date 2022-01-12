@@ -1,0 +1,20 @@
+{% extends "insureApp/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="tm-section-wrap bg-white">
+    <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'insureApp/img/img-01.jpg' %}"></div>
+        <section id="register" class="tm-section">
+            <h2 class="tm-text-primary">Claim Case Details for: {{ request.user.username }}</h2>
+            <hr class="mb-5">
+            <p><strong>Case Status:</strong> {{ claimCase.casestatus }}</p>
+            <p><strong>Policy Number:</strong> {{ claimCase.policynumber }}</p>
+            <p><strong>Value:</strong> {{ claimCase.value }}</a></p>
+            <p><strong>Risk Score:</strong> {{ claimCase.riskscore }}</a></p>
+            <p><strong>Case Category:</strong> {{ claimCase.casecategory }}</a></p>
+            <p><strong>Reported Date:</strong> {{ claimCase.reporteddate }}</a></p>
+            <p><strong>Claim Nature:</strong> {{ claimCase.claimnature }}</a></p>
+            <p><strong>Loaded to Algorand Address:</strong> {{ request.user.userdetails.AlgoAddress }}</a></p>
+        </section>
+    </div>
+{% endblock %}

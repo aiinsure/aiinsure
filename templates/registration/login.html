@@ -1,0 +1,26 @@
+{% extends "insureApp/base.html" %}
+{% load static %}
+{% block content %}
+<div class="tm-section-wrap">
+    <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'insureApp/img/img-01.jpg' %}"></div>
+    <section id="login" class="tm-section">
+        <h2 class="tm-text-primary">Login with AiInsure</h2>
+        <hr class="mb-5">
+        <form action="#" method="POST">
+            {% csrf_token %}
+          <p>
+                <label for="username">Enter Username: </label>
+                <input id="username" type="text" name="username" placeholder="Username">
+            </p>
+            <p>
+                <label for="password">Enter Password:  </label>
+                <input id="password" type="password" name="password" placeholder="Password">
+            </p>
+
+            <button class="btn btn-primary" type="submit">Login</button>
+            <!--<input type="submit" value="submit">Login</input>-->
+            <P> <br> If you don't have an account, please <a href="/register"> <strong> register </strong> </a> here. </P>
+        </form>
+    </section>
+</div>
+{% endblock %}
