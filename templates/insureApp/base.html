@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiInsure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/specimen/Kumbh+Sans -->
+    <link rel="stylesheet" href="{% static 'insureApp/fontawesome/css/all.min.css' %}">  <!-- https://fontawesome.com/-->
+    <link rel="stylesheet" href="{% static 'insureApp/css/magnific-popup.css' %}">       <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <link rel="stylesheet" href="{% static 'insureApp/css/bootstrap.min.css' %}">        <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="{% static 'insureApp/slick/slick.min.css' %}">          <!-- https://kenwheeler.github.io/slick/ -->
+    <link rel="stylesheet" href="{% static 'insureApp/slick/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'insureApp/css/templatemo-upright.css' %}">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Leftside bar -->
+            <div id="tm-sidebar" class="tm-sidebar">
+                <nav class="tm-nav">
+                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <div class="tm-brand-box">
+                            <h1 class="tm-brand">AiInsure</h1>
+                        </div>
+                        <ul id="tm-main-nav">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-home nav-icon"></i>
+                                    Home
+                                </a>
+                            </li>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a href="/userdetails" class="nav-link">
+                                        <div class="triangle-right"></div>
+                                        <i class="fas fa-images nav-icon"></i>
+                                        My Details
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/claimcase" class="nav-link">
+                                        <div class="triangle-right"></div>
+                                        <i class="fas fa-igloo nav-icon"></i>
+                                        Upload Case
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a href="/login" class="nav-link">
+                                        <div class="triangle-right"></div>
+                                        <i class="fas fa-images nav-icon"></i>
+                                        Login
+                                    </a>
+                                </li>
+                            {% endif %}
+                            <li class="nav-item">
+                                <a href="/apidocs" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-external-link-alt nav-icon"></i>
+                                    APIs
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-user-friends nav-icon"></i>
+                                    About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contact" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-envelope nav-icon"></i>
+                                    Contact
+                                </a>
+                            </li>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a href="logout" class="nav-link">
+                                        <div class="triangle-right"></div>
+                                        <i class="fas fa-id-card nav-icon"></i>
+                                        Logout
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="tm-main">
+                {% block content %}
+                {% endblock %}
+            </div> <!-- .tm-main -->
+        </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+    <script src="{% static 'insureApp/js/jquery-3.4.1.min.js' %}"></script>          <!-- https://jquery.com/ -->
+    <script src="{% static 'insureApp/js/jquery.singlePageNav.min.js' %}"></script>  <!-- https://github.com/ChrisWojcik/single-page-nav -->
+    <script src="{% static 'insureApp/js/parallax/parallax.min.js' %}"></script>     <!-- https://pixelcog.github.io/parallax.js/ -->
+    <script src="{% static 'insureApp/js/imagesloaded.pkgd.min.js' %}"></script>     <!-- https://imagesloaded.desandro.com/ -->
+    <script src="{% static 'insureApp/js/isotope.pkgd.min.js' %}"></script>          <!-- https://isotope.metafizzy.co/ -->
+    <script src="{% static 'insureApp/js/jquery.magnific-popup.min.js' %}"></script> <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <script src="{% static 'insureApp/slick/slick.min.js' %}"></script>              <!-- https://kenwheeler.github.io/slick/ -->
+    <script src="{% static 'insureApp/js/templatemo-script.js' %}"></script>
+</body>
+
+</html>

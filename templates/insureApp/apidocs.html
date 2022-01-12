@@ -1,0 +1,29 @@
+{% extends "insureApp/base.html" %}
+{% load static %}
+{% block content %}
+<!-- About section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'insureApp/img/img-03.jpg' %}"></div>
+        <section id="apidocs" class="tm-section">
+            <h2 class="tm-text-primary">AiInsure API Reference</h2>
+            <hr class="mb-5">
+            <div class="row tm-row-about">
+                <div class="tm-col-about tm-col-about-l">
+                    <P class="mb-5">AiInsure API service enables insurance companies to integrate claim history verification service into their own application</P>
+                    <p class="mb-4">
+                        - GET/POST/DELETE /claim/userdetailsapi/
+                    </p>
+                    <p class="mb-4">
+                        - GET/POST/DETETE /claim/userdetailsapi/{useruuid}
+                    </p>
+                    <p class="mb-4">
+                        - GET/POST/DELETE /claim/claimcaseapi/
+                    </p>
+                    <p class="mb-4">
+                        - GET/POST/DETETE /claim/claimcaseapi/{claim case number}
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
